@@ -117,8 +117,6 @@ void FAnimNode_MotionField::UpdateAssetPlayer(const FAnimationUpdateContext& Con
 	CheckSwitch();
 	MotionUpdate(Context);
 
-
-
 	//Compute();
 
 	if ((GetCurrentAnim() != NULL) && (Context.AnimInstanceProxy->IsSkeletonCompatible(GetCurrentAnim()->GetSkeleton())))
@@ -169,7 +167,6 @@ void FAnimNode_MotionField::Evaluate_AnyThread(FPoseContext & Output)
 		{
 		Sequence->GetAnimationPose(Output.Pose, Output.Curve, FAnimExtractContext(CurrentAnimTime, true));
 		}
-
 
 		}
 		else
