@@ -145,7 +145,6 @@ private:
 
 	void MotionUpdate(const FAnimationUpdateContext& Context);
 
-
 	void GetBlendPose(FCompactPose& OutPose, /*out*/ FBlendedCurve& OutCurve);
 
 	//TArray <FVector> PastCSPos;

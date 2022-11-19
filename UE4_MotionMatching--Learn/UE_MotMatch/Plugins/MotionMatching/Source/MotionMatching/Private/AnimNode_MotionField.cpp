@@ -557,16 +557,12 @@ void FAnimNode_MotionField::MotionUpdate(const FAnimationUpdateContext& Context)
 	const float DT = Context.GetDeltaTime();
 	if (!Pause)
 	{
-
-
 		CurrentAnimTime += DT;
 		BlendTimer = FMath::Clamp(BlendTimer + DT, 0.f, BlendTime);
-
 		if (ChangeCounter > ChangeAmountLimit)
 		{
 			ChangeTimer += DT;
 		}
-
 		if (ChangeTimer > ChangeTimeLimit)
 		{
 			ChangeTimer = 0.f;
