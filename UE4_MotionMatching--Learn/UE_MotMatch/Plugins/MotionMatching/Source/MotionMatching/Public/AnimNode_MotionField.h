@@ -89,6 +89,7 @@ protected:
 
 	UPROPERTY()
 	int CurrentMotKeyIndex;
+
 	////////////////////////////////////////// TRAJECTORY STUFF
 	/*
 	UPROPERTY()
