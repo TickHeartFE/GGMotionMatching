@@ -122,7 +122,6 @@ void FAnimNode_MotionField::UpdateAssetPlayer(const FAnimationUpdateContext& Con
 	if ((GetCurrentAnim() != NULL) && (Context.AnimInstanceProxy->IsSkeletonCompatible(GetCurrentAnim()->GetSkeleton())))
 	{
 		InternalTimeAccumulator = FMath::Clamp(CurrentAnimTime, 0.f, GetCurrentAnim()->SequenceLength);
-
 		CreateTickRecordForNode(Context, GetCurrentAnim(), bLoopAnimation, PlayRate);
 	}
 

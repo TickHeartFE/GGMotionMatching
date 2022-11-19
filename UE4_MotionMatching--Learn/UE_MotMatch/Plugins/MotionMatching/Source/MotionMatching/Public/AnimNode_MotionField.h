@@ -13,45 +13,48 @@
 *
 */
 
-
+// 这里继承的类是FAnimNode_AssetPlayerBase
+// 所以需要重写一些操作资产的方法
 
 /*This was the Node That I was using before but now Just use it to test AnimGraph Node code*/
 USTRUCT(BlueprintInternalUseOnly)
 struct MOTIONMATCHING_API FAnimNode_MotionField : public FAnimNode_AssetPlayerBase
 {
 	GENERATED_BODY()
-		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = MotionField)
-		UMotionField* MotionField;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = MotionData, meta = (PinShownByDefault))
-		FTrajectoryData DesiredTrajectory;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = MotionField)
+	UMotionField* MotionField;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = MotionData, meta = (PinShownByDefault))
-		float Responsiveness;
+	FTrajectoryData DesiredTrajectory;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = MotionData, meta = (PinShownByDefault))
-		float PoseStrength;
+	float Responsiveness;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = MotionData, meta = (PinShownByDefault))
-		float ChangeTimeLimit;
+	float PoseStrength;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = MotionData, meta = (PinShownByDefault))
-		int ChangeAmountLimit;
+	float ChangeTimeLimit;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = MotionData, meta = (PinShownByDefault))
-		bool DrawDebug;
+	int ChangeAmountLimit;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = MotionData, meta = (PinShownByDefault))
-		float BlendTime;
+	bool DrawDebug;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = MotionData, meta = (PinShownByDefault))
-		bool AuthorSwitch;
+	float BlendTime;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = MotionData, meta = (PinShownByDefault))
-		bool Switch;
+	bool AuthorSwitch;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = MotionData, meta = (PinShownByDefault))
+	bool Switch;
 
 public:
 
 	FAnimNode_MotionField();
-
 
 	// FAnimNode_AssetPlayerBase interface
 	virtual float GetCurrentAssetTime();
@@ -73,17 +76,19 @@ public:
 protected:
 
 	UPROPERTY()
-		int CurrentAnimIndex;
+	int CurrentAnimIndex;
 	UPROPERTY()
-		float CurrentAnimTime;
+	float CurrentAnimTime;
 
 	//////////////////BLEND STUFF
 	UPROPERTY()
-		float BlendTimer;
+	float BlendTimer;
+
 	UPROPERTY()
-		TArray <FTransform> LastBones;
+	TArray <FTransform> LastBones;
+
 	UPROPERTY()
-		int CurrentMotKeyIndex;
+	int CurrentMotKeyIndex;
 	////////////////////////////////////////// TRAJECTORY STUFF
 	/*
 	UPROPERTY()
@@ -94,24 +99,32 @@ protected:
 	FTrajectoryData PresentTrajectory;
 	*/
 	////////////////////////////////////////// JOINT DATA
+
 	UPROPERTY()
-		TArray <FJointData> JointsData;
+	TArray <FJointData> JointsData;
+
 	UPROPERTY()
-		FVector Vel;
+	FVector Vel;
 	//////////////////////////////////////////
+
 	UPROPERTY()
-		bool bLoopAnimation;
+	bool bLoopAnimation;
+
 	UPROPERTY()
-		int ChangeCounter;
+	int ChangeCounter;
+
 	UPROPERTY()
-		float ChangeTimer;
+	float ChangeTimer;
+
 	////
 	UPROPERTY()
-		float PlayRate;
+	float PlayRate;
+
 	UPROPERTY()
-		bool LastSwitch;
+	bool LastSwitch;
+
 	UPROPERTY()
-		bool Pause;
+	bool Pause;
 
 private:
 
