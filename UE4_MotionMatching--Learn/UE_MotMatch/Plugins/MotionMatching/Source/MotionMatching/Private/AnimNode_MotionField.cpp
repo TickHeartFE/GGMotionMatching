@@ -5,8 +5,6 @@
 #include "Engine/Engine.h"
 #include "AnimationRuntime.h"
 
-
-
 FAnimNode_MotionField::FAnimNode_MotionField()
 	: MotionField(NULL)
 	, DesiredTrajectory(FTrajectoryData())
@@ -29,7 +27,6 @@ FAnimNode_MotionField::FAnimNode_MotionField()
     Switch = (false);
 	ChangeCounter = (0);
 	AuthorSwitch = (false);
-
 	//TrajectoryPoints.Empty();
 	LastBones.Empty();
 	JointsData.Empty();
