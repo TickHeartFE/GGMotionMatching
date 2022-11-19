@@ -112,13 +112,9 @@ void FAnimNode_MotionField::UpdateAssetPlayer(const FAnimationUpdateContext& Con
 
 	//FString JO = TEXT("TIME COMPARISON  :: TESTO  ") + FString::SanitizeFloat( + Context.AnimInstanceProxy->GetDeltaSeconds()) + TEXT(" : This the real : ") + FString::SanitizeFloat(CopyTime);
 	//GEngine->AddOnScreenDebugMessage(-1, 1.02f, FColor::Yellow, JO); Context.AnimInstanceProxy->GetSkelMeshComponent()->GetSocketTransform(TEXT("root"), RTS_World).GetTranslation()
-
-
 	//Context.AnimInstanceProxy->AnimDrawDebugLine(FVector(0.f), FVector(1000.f), FColor::Green, false, 1.f, 10.f);
-
 	//CheckPending();
 	CheckSwitch();
-
 	MotionUpdate(Context);
 
 
