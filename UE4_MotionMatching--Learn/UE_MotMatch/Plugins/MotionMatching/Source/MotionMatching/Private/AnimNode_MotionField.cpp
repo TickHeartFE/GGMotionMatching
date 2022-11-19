@@ -64,6 +64,7 @@ void FAnimNode_MotionField::Initialize_AnyThread(const FAnimationInitializeConte
 	InternalTimeAccumulator = 0.f;
 
 	UAnimSequence* Sequence = GetCurrentAnim();
+
 	/*
 	for (int i = 0; i < NumPointsPerSecond; i++)
 	{
@@ -94,9 +95,9 @@ void FAnimNode_MotionField::Initialize_AnyThread(const FAnimationInitializeConte
 		}
 	}
 
-
-
 	//BasePose.Initialize(Context);
+
+
 }
 
 void FAnimNode_MotionField::CacheBones_AnyThread(const FAnimationCacheBonesContext & Context)
