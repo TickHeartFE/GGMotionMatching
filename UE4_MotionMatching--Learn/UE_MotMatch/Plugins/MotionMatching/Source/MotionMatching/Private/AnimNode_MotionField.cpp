@@ -761,5 +761,6 @@ void FAnimNode_MotionField::GetBlendPose(FCompactPose & OutPose, FBlendedCurve &
 
 	// Once all the accumulation and blending has been done, normalize rotations.
 	OutPose.NormalizeRotations();
+
 	*/
 }

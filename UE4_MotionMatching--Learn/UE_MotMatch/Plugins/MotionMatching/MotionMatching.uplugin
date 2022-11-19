@@ -25,7 +25,7 @@
 		},
 		{
 			"Name": "MotionMatchingEditor",
-			"Type": "Editor",
+			"Type": "UncookedOnly",
 			"LoadingPhase": "PreDefault",
 			"BlacklistPlatforms": [
 				"IOS"
