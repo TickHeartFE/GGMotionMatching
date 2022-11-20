@@ -1,5 +1,3 @@
-
-
 #include "AssetTypeActions_MotionField.h"
 #include "MotionMatchingEditor.h"
 

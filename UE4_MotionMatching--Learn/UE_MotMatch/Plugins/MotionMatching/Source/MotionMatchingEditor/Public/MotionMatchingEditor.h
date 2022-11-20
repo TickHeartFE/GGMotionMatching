@@ -32,10 +32,7 @@ class FMenuBuilder;
 class FMotionMatchingEditorModule : public IModuleInterface
 {
 public:
-	FMotionMatchingEditorModule()
-		:MotionFieldAssetCategoryBit(EAssetTypeCategories::Misc)
-	{
-	}
+	FMotionMatchingEditorModule(): MotionFieldAssetCategoryBit(EAssetTypeCategories::Misc) {}
 	/** IModuleInterface implementation */
 	virtual void StartupModule() override;
 	virtual void ShutdownModule() override;
@@ -43,14 +40,16 @@ public:
 	/** This function will be bound to Command (by default it will bring up plugin window) */
 	
 	virtual TSharedPtr<FExtensibilityManager> GetMotionFieldEditorToolBarExtensibilityManager() { return MotionFieldEditor_ToolBarExtensibilityManager; }
+
 private:
 	TSharedPtr<FExtensibilityManager> MotionFieldEditor_ToolBarExtensibilityManager;
 
 	void RegisterAssetTypeAction(IAssetTools& AssetTools, TSharedRef<IAssetTypeActions> Action);
 	void RegisterCustomClassLayout(FName ClassName, FOnGetDetailCustomizationInstance DetailLayoutDelegate);
 	
-	TSet< FName > RegisteredClassNames;
+	TSet<FName> RegisteredClassNames;
 	EAssetTypeCategories::Type MotionFieldAssetCategoryBit;
-	TArray< TSharedPtr<IAssetTypeActions> > CreatedAssetTypeActions;
+	TArray<TSharedPtr<IAssetTypeActions>> CreatedAssetTypeActions;
+	TArray<TSharedPtr<IAssetTypeActions>> CreatedAssetTypeActions;
 
 };

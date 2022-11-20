@@ -26,11 +26,8 @@ void FMotionMatchingEditorModule::StartupModule()
 
 	FMotionMatchingStyle::Initialize();
 	
-	
 	IAssetTools& AssetTools = FModuleManager::LoadModuleChecked<FAssetToolsModule>("AssetTools").Get();
 	RegisterAssetTypeAction(AssetTools, MakeShareable(new FAssetTypeActions_MotionField()));
-	
-
 }
 
 void FMotionMatchingEditorModule::ShutdownModule()

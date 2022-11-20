@@ -7,7 +7,7 @@
 
 #include "IPluginManager.h"
 
-TSharedPtr< FSlateStyleSet > FMotionMatchingStyle::StyleInstance = NULL;
+TSharedPtr<FSlateStyleSet> FMotionMatchingStyle::StyleInstance = NULL;
 
 void FMotionMatchingStyle::Initialize()
 {
@@ -25,7 +25,7 @@ void FMotionMatchingStyle::Shutdown()
 	StyleInstance.Reset();
 }
 
-TSharedPtr< class ISlateStyle > FMotionMatchingStyle::Get() { return StyleInstance; }
+TSharedPtr<class ISlateStyle> FMotionMatchingStyle::Get() { return StyleInstance; }
 
 FName FMotionMatchingStyle::GetStyleSetName()
 {

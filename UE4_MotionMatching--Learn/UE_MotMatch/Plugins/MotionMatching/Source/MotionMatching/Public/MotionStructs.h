@@ -100,6 +100,7 @@ struct MOTIONMATCHING_API FTrajectoryData
 };
 
 
+// 里面存储着关节的信息，包括有关节的位置，以及关节的朝向
 USTRUCT(BlueprintType)
 struct MOTIONMATCHING_API FJointData
 {
@@ -111,11 +112,9 @@ struct MOTIONMATCHING_API FJointData
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PoseMotionData")
 	FVector BoneCSVel = FVector::ZeroVector;
 
-	FJointData()
-	{
+	FJointData() {}
 
-	}
-
+	// 比较函数，返回Pos和Vel的Dis即可
 	float CompareTo(const FJointData Other) const;
 };
 
@@ -131,10 +130,7 @@ struct MOTIONMATCHING_API FMotionPose
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PoseMotionData")
 	FTrajectoryData FutureTrajectory;
 
-	FMotionPose()
-	{
-
-	}
+	FMotionPose() {}
 
 	//float CompareTo(const FJointData Other) const;
 };

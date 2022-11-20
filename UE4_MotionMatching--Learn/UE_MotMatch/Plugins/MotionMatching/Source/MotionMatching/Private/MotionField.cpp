@@ -11,14 +11,8 @@ UMotionField::UMotionField(const FObjectInitializer& ObjectInitializer)
 	TimeStep = 0.1f;
 	Skeleton = NULL;
 	Tags.Empty();
-	
 	MotionKeys.Empty();
-
 	MotionBones.Empty();
-
-	
-	
-
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////

@@ -66,9 +66,9 @@ void FMotionKey::ExtractDataFromAnimation(const UAnimSequence * InSequence, cons
 
 		FMotionKeyUtils::ExtractAnimTrajectory(FutureTrajectory, InSequence, StartTime);
 
-#if WITH_EDITOR
-			SrcAnimationName = InSequence->GetFName();
-#endif // WITH_EDITOR
+		#if WITH_EDITOR
+					SrcAnimationName = InSequence->GetFName();
+		#endif // WITH_EDITOR
 	}
 
 }
