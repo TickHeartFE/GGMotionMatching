@@ -7,7 +7,6 @@
 /**
  * 
  */
-
 USTRUCT(BlueprintType)
 struct MOTIONMATCHING_API FKeyPoseData
 {
@@ -31,7 +30,6 @@ struct MOTIONMATCHING_API FKeyPoseData
 		{
 			if (BoneTMs.Num() > 0)
 			{
-
 				for (int i = 0; i < BoneTMs.Num(); i++)
 				{
 					if (!(BoneTMs[i].Equals(Other.BoneTMs[i])))
@@ -48,7 +46,7 @@ struct MOTIONMATCHING_API FKeyPoseData
 		}
 		return false;
 	}
-};
+};	
 
 
 USTRUCT(BlueprintType)
@@ -92,6 +90,7 @@ struct MOTIONMATCHING_API FTrajectoryData
 	// Empty Constructer
 	FTrajectoryData()
 	{
+		// 对应的空构造函数
 		TrajectoryPoints.Empty();
 		EndVel = FVector::ZeroVector;
 	}

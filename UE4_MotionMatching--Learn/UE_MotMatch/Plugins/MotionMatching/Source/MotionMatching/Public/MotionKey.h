@@ -26,7 +26,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "PoseData")
 	int32 SrcAnimIndex;
 
-
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "PoseData")
 	float StartTime;
 
@@ -41,15 +40,15 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "KeyBoneMotionData")
 	FVector PresentVel;
-	///////////////////////////
 
-	//////////////////////////FUTURE KEY Data
+	// FUTURE KEY Data
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FutureMotionData")
 	FTrajectoryData FutureTrajectory;
 
-	////////////////////////SECOND EVALUATION DATA
+	// SECOND EVALUATION DATA
 		
-	//// Here evaluate the current Key against candidate keys/////--------Gotta Take this and put it elswhere and make it static at some point
+	// Here evaluate the current Key against candidate keys
+	// Gotta Take this and put it elswhere and make it static at some point
 	float ComputeMotionKeyCost(const float Responsiveness, const float VelocityStrength, const float PoseStrength, const FTrajectoryData DesiredTrajectory, const TArray <FJointData> PresentJointData, const FVector PresentVel);
 
 
@@ -58,9 +57,9 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = "MotionKeyHandle")
 	FName SrcAnimationName;
 #endif 
-	//WITH_EDITOR
-	//////////////////////////
-	////////////-------------This is the function used to store the precomputed data from the designated sequence.
+	// WITH_EDITOR
+	// This is the function used to store the precomputed data from the designated sequence.
+
 	void ExtractDataFromAnimation(const UAnimSequence * InSequence, const int AtSrcAnimIndex, const float AtSrcStartTime, TArray <FName> InMotionBoneNames);
 
 	FORCEINLINE bool operator==(const FMotionKey Other) const

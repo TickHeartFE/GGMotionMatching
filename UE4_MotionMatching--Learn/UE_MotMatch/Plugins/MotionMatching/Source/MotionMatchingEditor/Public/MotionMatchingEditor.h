@@ -50,6 +50,4 @@ private:
 	TSet<FName> RegisteredClassNames;
 	EAssetTypeCategories::Type MotionFieldAssetCategoryBit;
 	TArray<TSharedPtr<IAssetTypeActions>> CreatedAssetTypeActions;
-	TArray<TSharedPtr<IAssetTypeActions>> CreatedAssetTypeActions;
-
 };

@@ -15,11 +15,14 @@
 class USkeleton;
 struct FMotionExtractionContext;
 
-
+// 这里面就是对用WITH_EDITOR的部分
 #if WITH_EDITOR
 USTRUCT()
 struct FTagRange
 {
+	// 里面存储者TArray<float> RangeKeys
+	// 标注着Tag的范围
+	// which is call FTagRange
 	GENERATED_BODY()
 
 	UPROPERTY()
@@ -38,10 +41,11 @@ struct FTagHelper
 	GENERATED_BODY()
 
 	UPROPERTY()
-		FName AnimName = NAME_None;
-	/////-------------One Per Tag
+	FName AnimName = NAME_None;
+
+	// One Per Tag
 	UPROPERTY()
-		TArray <FTagRange> Ranges;
+	TArray <FTagRange> Ranges;
 
 	FTagHelper()
 	{
@@ -88,18 +92,18 @@ public:
 
 	UMotionField(const FObjectInitializer& ObjectInitializer);
 
-	/////---This here is pretty much the List of candidate poses we search through every frame.
+	// This here is pretty much the List of candidate poses we search through every frame.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MotionKeys")
 	TArray <FMotionKey> MotionKeys;
 
-	//Motion Bones are the Bones I store the Joint Data from for the Matching process
+	// Motion Bones are the Bones I store the Joint Data from for the Matching process
 	UPROPERTY(BlueprintReadOnly, Category = "BoneData")
 	TArray <FName> MotionBones;
 		
 	UPROPERTY(BlueprintReadOnly, Category = "Animations")
 	TArray <UAnimSequence*> SourceAnimations;
 
-	/////--------Gotta Take this and put it elswhere and make it static at some point
+	// Gotta Take this and put it elswhere and make it static at some point
 	UFUNCTION()
 	int GetLowestCostMotionKey
 	(
@@ -119,9 +123,7 @@ public:
 #if WITH_EDITOR
 	void AddRangeToTagHelper(const float RangeTime, const uint8 AtTagIdx, const int32 AtAnimIdx);
 	void RemoveRangeFromTagHelper(const float RangeTime, const uint8 AtTagIdx, const int32 AtAnimIdx);
-
 	bool IsTimeTagged(const float RangeTime, const uint8 AtTagIdx, const int32 AtAnimIdx);
-
 #endif //WITH_EDITOR
 
 	void ResetTagsInAnim(const int32 AnimIdx);
@@ -139,9 +141,7 @@ public:
 	
 	//----------------------------------------------------------------------------------------------------------------
 	FString GetTagAtIndex( const int32 TagIdx) const;
-		
-
-		
+	
 
 	int32 GetNumOfTags()
 	{
