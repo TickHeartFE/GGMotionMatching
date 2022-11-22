@@ -15,39 +15,37 @@ AMotCharacter::AMotCharacter(const FObjectInitializer& ObjectInitializer/* = FOb
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
 // Called when the game starts or when spawned
 void AMotCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-
 }
 
 // Called every frame
 void AMotCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 // Called to bind functionality to input
 void AMotCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
 }
 
 void AMotCharacter::OverrideRootMotion(const FTransform RootMotion)
 {
+	
 	UMotCharacterMovementComponent * ChMovComp = Cast<UMotCharacterMovementComponent>(AMotCharacter::GetCharacterMovement());
 	
 	if (ChMovComp != NULL)
 	{
-
+		// 使用RootMotion来进行驱动运动，所有的运动模式都修改为RootMotion
 		ChMovComp->OverridenRootMotion = RootMotion;
 		ChMovComp->OverridenRootMotion.SetScale3D(GetMesh()->GetComponentToWorld().GetScale3D());
+		// Set the OverrideRootMotion to true
 		ChMovComp->OverrideRootMotion = true;
 		
 	}

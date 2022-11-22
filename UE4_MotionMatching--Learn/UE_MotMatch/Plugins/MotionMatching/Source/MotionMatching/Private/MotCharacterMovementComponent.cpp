@@ -45,7 +45,7 @@
 
 void UMotCharacterMovementComponent::PerformMovement(float DeltaSeconds)
 {
-//	SCOPE_CYCLE_COUNTER(STAT_CharacterMovementPerformMovement);
+    // SCOPE_CYCLE_COUNTER(STAT_CharacterMovementPerformMovement);
 
 	const UWorld* MyWorld = GetWorld();
 	if (!HasValidData() || MyWorld == nullptr)
@@ -112,16 +112,16 @@ void UMotCharacterMovementComponent::PerformMovement(float DeltaSeconds)
 			CurrentRootMotion.CleanUpInvalidRootMotion(DeltaSeconds, *CharacterOwner, *this);
 
 #if ROOT_MOTION_DEBUG
-			if (RootMotionSourceDebug::CVarDebugRootMotionSources.GetValueOnGameThread() == 1)
+		if(RootMotionSourceDebug::CVarDebugRootMotionSources.GetValueOnGameThread() == 1)
+		{
+			if(Velocity != VelocityBeforeCleanup)
 			{
-				if (Velocity != VelocityBeforeCleanup)
-				{
-					const FVector Adjustment = Velocity - VelocityBeforeCleanup;
-					FString AdjustedDebugString = FString::Printf(TEXT("PerformMovement CleanUpInvalidRootMotion Velocity(%s) VelocityBeforeCleanup(%s) Adjustment(%s)"),
-						*Velocity.ToCompactString(), *VelocityBeforeCleanup.ToCompactString(), *Adjustment.ToCompactString());
-					RootMotionSourceDebug::PrintOnScreen(*CharacterOwner, AdjustedDebugString);
-				}
+				const FVector Adjustment = Velocity - VelocityBeforeCleanup;
+				FString AdjustedDebugString = FString::Printf(TEXT("PerformMovement CleanUpInvalidRootMotion Velocity(%s) VelocityBeforeCleanup(%s) Adjustment(%s)"),
+					*Velocity.ToCompactString(), *VelocityBeforeCleanup.ToCompactString(), *Adjustment.ToCompactString());
+				RootMotionSourceDebug::PrintOnScreen(*CharacterOwner, AdjustedDebugString);
 			}
+		}
 #endif
 		}
 

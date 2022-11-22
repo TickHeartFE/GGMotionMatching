@@ -31,5 +31,5 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	
 	UFUNCTION(BlueprintCallable, Category = "OverrideRootMotion")
-		virtual void OverrideRootMotion(const FTransform RootMotion);
+	virtual void OverrideRootMotion(const FTransform RootMotion);
 };

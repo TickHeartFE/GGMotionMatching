@@ -10,9 +10,7 @@
 #include "MotionField.h"
 #include "MotionField_Factory.generated.h"
 
-
- 
- 
+// 新建资产
 UCLASS()
 class MOTIONMATCHINGEDITOR_API UMotionFieldFactory : public UFactory
 {
@@ -20,19 +18,19 @@ class MOTIONMATCHINGEDITOR_API UMotionFieldFactory : public UFactory
 		
 public:
 	UMotionFieldFactory(const FObjectInitializer& ObjectInitializer);
-	//~MotionField_Factory();
+	// ~MotionField_Factory();
 
 
 	UPROPERTY(EditAnywhere, Category = MotionFieldFactory)
-		class USkeleton* TargetSkeleton;
+	class USkeleton* TargetSkeleton;
 
 	UPROPERTY(EditAnywhere, Category = MotionFieldFactory)
-		TArray <FName> TargetMotionBones;
+	TArray <FName> TargetMotionBones;
 
 	//~ Begin UFactory Interface
 	virtual bool ConfigureProperties() override;
 	virtual UObject* FactoryCreateNew(UClass* Class, UObject* InParent, FName Name, EObjectFlags Flags, UObject* Context, FFeedbackContext* Warn, FName CallingContext) override;
 	virtual UObject* FactoryCreateNew(UClass* Class, UObject* InParent, FName Name, EObjectFlags Flags, UObject* Context, FFeedbackContext* Warn) override;
-	//~ Begin UFactory Interface	
+	//~ End UFactory Interface	
 	
 };

@@ -172,8 +172,9 @@ public:
 
 	SLATE_END_ARGS()
 
-		// Constructs this widget with InArgs 
-		void Construct(const FArguments& InArgs, const bool Ow)
+	// Constructs this widget with InArgs 
+	// 创建这个widget并用一些参数进行构造
+	void Construct(const FArguments& InArgs, const bool Ow)
 	{
 		bOkClicked = false;
 
@@ -273,7 +274,7 @@ public:
 			]
 			];
 
-		//MakeParentClassPicker();
+		// MakeParentClassPicker();
 		MakeSkeletonPicker();
 		RebuildBonePicker();
 	}
@@ -375,9 +376,6 @@ private:
 			USkeleton* Skel = Cast<USkeleton>(TargetSkeleton.GetAsset());
 			if (Skel)
 			{
-
-			
-
 				for (int i = 1; i < Skel->GetReferenceSkeleton().GetNum(); i++)
 				{
 
@@ -403,7 +401,7 @@ private:
 
 	bool FilterSkeletonBasedOnParentClass(const FAssetData& AssetData)
 	{
-		return false;// !CanCreateMotionField(AssetData, ParentClass.Get());
+		return false; // !CanCreateMotionField(AssetData, ParentClass.Get());
 	}
 
 	// Handler for when a skeleton is selected 
@@ -484,7 +482,7 @@ private:
 	TSharedPtr<SVerticalBox> SkeletonContainer;
 	TSharedPtr<SVerticalBox> SkeletonBoneContainer;
 	TArray <TSharedPtr <SSingleBoneItem>> BoneItems;
-	//TSharedPtr<STreeView<TSharedPtr<int>>> Ow;
+	// TSharedPtr<STreeView<TSharedPtr<int>>> Ow;
 	
 	// The selected skeleton 
 	FAssetData TargetSkeleton;
@@ -492,9 +490,6 @@ private:
 	// True if Ok was clicked 
 	bool bOkClicked;
 };
-
-//////////////////////////////////////////////////////////
-
 
 
 //UMotionFieldFactory implementation.
@@ -509,7 +504,7 @@ UMotionFieldFactory::UMotionFieldFactory(const FObjectInitializer& ObjectInitial
 
 bool UMotionFieldFactory::ConfigureProperties()
 {
-	
+	// 创建对应的SMotionFieldCreateDialog，然后在Dialog中
 	TSharedRef<SMotionFieldCreateDialog> Dialog = SNew(SMotionFieldCreateDialog, true);
 	return Dialog->ConfigureProperties(this);
 };
@@ -518,7 +513,7 @@ UObject* UMotionFieldFactory::FactoryCreateNew(UClass* Class, UObject* InParent,
 {
 	
 	UMotionField* NewMotionField = NewObject<UMotionField>(InParent, Class, Name, Flags | RF_Transactional);
-	////////////////////////////
+
 	if(NewMotionField && TargetSkeleton)
 	{
 

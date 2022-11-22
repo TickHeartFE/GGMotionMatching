@@ -35,6 +35,8 @@ struct FTagRange
 };
 
 
+// This is the Helper for tag
+// One TagHelper -> Equa -> One AnimName -> FTagRange
 USTRUCT()
 struct FTagHelper
 {
@@ -65,6 +67,7 @@ struct FTagHelper
 // 当然，Persona模块也还是提供了许多像是BoneTree之类的有用接口，我们后面会提到
 // Persona模块中类似BoneTree的接口，可以直接获取到任务的骨骼树
 
+
 /*Data asset class that holds the List of Candidate Motion Keys to transition to*/
 UCLASS(BlueprintType)
 class MOTIONMATCHING_API UMotionField : public UObject
@@ -72,19 +75,24 @@ class MOTIONMATCHING_API UMotionField : public UObject
 	GENERATED_BODY()
 
 private:
+	// 采样时间
 	UPROPERTY()
 	float TimeStep;
+	// 选定的对应的骨骼
 	UPROPERTY()
 	USkeleton* Skeleton;
+	// TArray Tags
 	UPROPERTY()
 	TArray <FString> Tags;
 	
 #if WITH_EDITOR
-	/////-------------One Per SrcAnim
+	// One Per SrcAnim
 	UPROPERTY()
 	TArray <FTagHelper> TagHelpers;
 
+	// Reset the All the TagHelper
 	void ResetTagHelperRanges();
+	// 
 	void ProcessTagHelpers();
 #endif //WITH_EDITOR
 
@@ -194,11 +202,12 @@ public:
 
 	UAnimSequence* GetSrcAnimAtIndex(const int Index)
 	{
-			return SourceAnimations[Index];
+		return SourceAnimations[Index];
 	}
 
 	bool IsExtractedFrame(const FName AnimName, const float Time);
 
+	// Get the MotionField Skeleton
 	USkeleton* GetMotionFieldSkeleton()
 	{
 		return Skeleton;

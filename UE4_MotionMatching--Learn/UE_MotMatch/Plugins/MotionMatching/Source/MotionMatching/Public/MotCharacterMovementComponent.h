@@ -12,6 +12,7 @@ UCLASS()
 class MOTIONMATCHING_API UMotCharacterMovementComponent : public UCharacterMovementComponent
 {
 	GENERATED_BODY()
+
 protected:
 	virtual void PerformMovement(float DeltaSeconds) override;
 
@@ -19,9 +20,11 @@ public:
 
 	UMotCharacterMovementComponent(const FObjectInitializer& ObjectInitializer);
 	UPROPERTY(Category = "Character Movement: Root Motion", EditAnywhere, BlueprintReadWrite)
-		bool AllowRootMotionOverride;
+	bool AllowRootMotionOverride;
+
 	UPROPERTY(BlueprintReadOnly)
-		bool OverrideRootMotion;
+	bool OverrideRootMotion;
+
 	UPROPERTY(BlueprintReadOnly)
-		FTransform OverridenRootMotion;
+	FTransform OverridenRootMotion;
 };

@@ -29,7 +29,6 @@ float FMotionKey::ComputeMotionKeyCost(const float Responsiveness, const float V
 	
 	Cost += DesiredTrajectory.CompareTo(FutureTrajectory, 1) * Responsiveness;
 	
-	
 	check(PresentJointData.Num() == MotionJointData.Num());
 	
 	float PoseCost = 0.f;
@@ -67,7 +66,7 @@ void FMotionKey::ExtractDataFromAnimation(const UAnimSequence * InSequence, cons
 		FMotionKeyUtils::ExtractAnimTrajectory(FutureTrajectory, InSequence, StartTime);
 
 		#if WITH_EDITOR
-					SrcAnimationName = InSequence->GetFName();
+			SrcAnimationName = InSequence->GetFName();
 		#endif // WITH_EDITOR
 	}
 
