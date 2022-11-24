@@ -51,7 +51,7 @@ void FMotionKey::ExtractDataFromAnimation(const UAnimSequence * InSequence, cons
 		SrcAnimIndex = AtSrcAnimIndex;
 
 		FReferenceSkeleton RefSkel = InSequence->GetSkeleton()->GetReferenceSkeleton();
-
+		
 		StartTime = AtSrcStartTime;
 
 		for (int i = 0; i < InMotionBoneNames.Num(); i++)
