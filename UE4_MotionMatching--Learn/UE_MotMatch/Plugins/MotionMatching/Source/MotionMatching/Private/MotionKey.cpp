@@ -6,7 +6,7 @@
 
 FMotionKey::FMotionKey()
 {
-	//KeyPose = FKeyPoseData();
+	// KeyPose = FKeyPoseData();
 	SrcAnimIndex = INDEX_NONE;
 	StartTime = 0.f;
 
