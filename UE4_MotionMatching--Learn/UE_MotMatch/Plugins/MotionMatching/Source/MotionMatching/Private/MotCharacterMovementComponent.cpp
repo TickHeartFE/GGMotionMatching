@@ -125,6 +125,7 @@ void UMotCharacterMovementComponent::PerformMovement(float DeltaSeconds)
 #endif
 		}
 
+
 		OldVelocity = Velocity;
 		OldLocation = UpdatedComponent->GetComponentLocation();
 

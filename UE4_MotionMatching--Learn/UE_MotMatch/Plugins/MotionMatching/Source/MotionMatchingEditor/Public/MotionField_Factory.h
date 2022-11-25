@@ -11,6 +11,10 @@
 #include "MotionField_Factory.generated.h"
 
 // 新建资产
+// this MotionFieldFieldFactory this MotionFiledFactory
+// 用来新建属于自己的资产
+// MOTIONMATCHINGEDITTOR_API To Create a New Factory
+// MOTIONMATCHINGEDITOR_API To Create a NewFactory
 UCLASS()
 class MOTIONMATCHINGEDITOR_API UMotionFieldFactory : public UFactory
 {
@@ -23,6 +27,9 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = MotionFieldFactory)
 	class USkeleton* TargetSkeleton;
+
+	UPROPERTY(EditAnywhere, Category = MotionFieldFactory)
+	class 
 
 	UPROPERTY(EditAnywhere, Category = MotionFieldFactory)
 	TArray <FName> TargetMotionBones;
