@@ -10,8 +10,6 @@ struct FJointData;
 
 
 /*Character class that merely implements ExtCharacterMovementComponen to set the Root Motion From the AnimGraph Node Motion Matching*/
-// Set RootMotion
-// Set RootMotion
 UCLASS()
 class MOTIONMATCHING_API AMotCharacter : public ACharacter
 {
@@ -27,6 +25,7 @@ protected:
 
 public:
 	// Called every frame
+	// This Tick Function will call it every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
