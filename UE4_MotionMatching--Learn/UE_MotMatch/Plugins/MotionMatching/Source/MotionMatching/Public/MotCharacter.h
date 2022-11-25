@@ -10,13 +10,15 @@ struct FJointData;
 
 
 /*Character class that merely implements ExtCharacterMovementComponen to set the Root Motion From the AnimGraph Node Motion Matching*/
+// Set RootMotion
+// Set RootMotion
 UCLASS()
 class MOTIONMATCHING_API AMotCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this character's properties
+	// Sets default values for this character's properties;
 	AMotCharacter(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
 protected:

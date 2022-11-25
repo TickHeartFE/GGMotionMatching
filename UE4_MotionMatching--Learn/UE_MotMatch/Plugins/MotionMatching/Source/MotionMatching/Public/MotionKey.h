@@ -50,6 +50,8 @@ public:
 		
 	// Here evaluate the current Key against candidate keys
 	// Gotta Take this and put it elswhere and make it static at some point
+	// use this to ComputeMotionKeyCost
+	// ”√¿¥º∆À„MotionKeyCost
 	float ComputeMotionKeyCost(const float Responsiveness, const float VelocityStrength, const float PoseStrength, const FTrajectoryData DesiredTrajectory, const TArray <FJointData> PresentJointData, const FVector PresentVel);
 
 
