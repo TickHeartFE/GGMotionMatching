@@ -527,6 +527,8 @@ UObject* UMotionFieldFactory::FactoryCreateNew(UClass* Class, UObject* InParent,
 
 UObject* UMotionFieldFactory::FactoryCreateNew(UClass* Class, UObject* InParent, FName Name, EObjectFlags Flags, UObject* Context, FFeedbackContext* Warn)
 {
+	// 这里再转发到FactoryCreateNew中进行创建
+	// 得到最终的结论
 	return FactoryCreateNew(Class, InParent, Name, Flags, Context, Warn, NAME_None);
 }
 
