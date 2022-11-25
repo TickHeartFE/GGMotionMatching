@@ -511,17 +511,16 @@ bool UMotionFieldFactory::ConfigureProperties()
 
 UObject* UMotionFieldFactory::FactoryCreateNew(UClass* Class, UObject* InParent, FName Name, EObjectFlags Flags, UObject* Context, FFeedbackContext* Warn, FName CallingContext)
 {
-	
+	// 使用NewObjecet进行创建
 	UMotionField* NewMotionField = NewObject<UMotionField>(InParent, Class, Name, Flags | RF_Transactional);
 
-	if(NewMotionField && TargetSkeleton)
+	if (NewMotionField && TargetSkeleton)
 	{
-
+		// 相当于一个构造函数
 		NewMotionField->PopulateFromSkeleton(TargetSkeleton, TargetMotionBones);
-	
+
 		return NewMotionField;
 	}
-		
 
 	return NULL;
 }
