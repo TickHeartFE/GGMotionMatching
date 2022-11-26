@@ -7,7 +7,9 @@
 FMotionKey::FMotionKey()
 {
 	// KeyPose = FKeyPoseData();
+
 	SrcAnimIndex = INDEX_NONE;
+
 	StartTime = 0.f;
 
 	TagsIdx.Empty();

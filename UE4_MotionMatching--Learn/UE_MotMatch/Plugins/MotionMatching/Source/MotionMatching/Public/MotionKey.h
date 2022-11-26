@@ -16,12 +16,15 @@ class UAnimSequence;
 
 // 索引每一行特征向量实际对应到的动画资产的哪一帧
 // 特征向量映射到动画资产的某一帧
+// 特征向量映射索引到动画资产的某一帧
 USTRUCT(BlueprintType)
 struct MOTIONMATCHING_API FMotionKey 
 {
 	GENERATED_BODY()
 		
 public:
+
+	FMotionKey();
 
 	FMotionKey();
 
