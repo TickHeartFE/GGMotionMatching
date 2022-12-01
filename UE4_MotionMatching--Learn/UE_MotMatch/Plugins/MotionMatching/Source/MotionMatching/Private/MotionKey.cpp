@@ -40,7 +40,10 @@ float FMotionKey::ComputeMotionKeyCost(const float Responsiveness, const float V
 		PoseCost += PresentJointData[i].CompareTo(MotionJointData[i]);
 	}
 
+	// 乘以一个比例系数PoseStrengh
 	PoseCost *= PoseStrength;
+
+	// PoseCost *= PoseStrength;
 
 	return PoseCost + Cost;
 }
