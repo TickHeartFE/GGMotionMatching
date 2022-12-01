@@ -45,7 +45,11 @@ float FMotionKey::ComputeMotionKeyCost(const float Responsiveness, const float V
 
 	// PoseCost *= PoseStrength;
 
+	// return PoseCost + Cost;
+
+	// 最终返回所有的Cost
 	return PoseCost + Cost;
+
 }
 
 
