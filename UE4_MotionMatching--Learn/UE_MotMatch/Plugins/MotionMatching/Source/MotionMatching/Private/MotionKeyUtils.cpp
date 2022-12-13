@@ -68,18 +68,20 @@ void FMotionKeyUtils::ExtractAnimTrajectory(FTrajectoryData& OutTrajectoryData, 
 		float TimeDelay = (0.1 * i);
 		
 		FTransform TrajectoryPointTM = InSequence->ExtractRootMotion(KeyTime, TimeDelay, true);
-/*	
+
+		/*	
 		FQuat TMPQuat = FQuat::Identity;
 		ExtractAnimSmoothedRotation(TMPQuat, InSequence, KeyTime);
 		TrajectoryPointTM.SetRotation(TMPQuat);
-
 		*/
+
 		TrajectoryPoints.Add(FTrajectoryPoint(TrajectoryPointTM, TimeDelay));
 
 	}
 	
 	OutTrajectoryData.TrajectoryPoints = TrajectoryPoints;
 	GetAnimVelocityAtTime(InSequence, KeyTime + 1.f, OutTrajectoryData.EndVel);
+	
 	//GetAnimVelocityAtTime(InSequence, EndTime, KeyTM, OutTrajectoryData.EndVel);
 	
 }

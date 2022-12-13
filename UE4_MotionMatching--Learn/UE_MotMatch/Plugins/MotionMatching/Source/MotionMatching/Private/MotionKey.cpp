@@ -55,6 +55,9 @@ float FMotionKey::ComputeMotionKeyCost(const float Responsiveness, const float V
 
 void FMotionKey::ExtractDataFromAnimation(const UAnimSequence * InSequence, const int AtSrcAnimIndex, const float AtSrcStartTime, TArray <FName> InMotionBoneNames)
 {
+
+	// if(InSequenece) 就要进入到对应的动画序列中进行有关的逻辑操作
+
 	if (InSequence)
 	{
 		SrcAnimIndex = AtSrcAnimIndex;
@@ -72,11 +75,15 @@ void FMotionKey::ExtractDataFromAnimation(const UAnimSequence * InSequence, cons
 
 		FMotionKeyUtils::GetAnimVelocityAtTime(InSequence, StartTime, PresentVel);
 
+
+		// 追溯对应动画的轨迹
 		FMotionKeyUtils::ExtractAnimTrajectory(FutureTrajectory, InSequence, StartTime);
+
 
 		#if WITH_EDITOR
 			SrcAnimationName = InSequence->GetFName();
 		#endif // WITH_EDITOR
+
 	}
 
 }
