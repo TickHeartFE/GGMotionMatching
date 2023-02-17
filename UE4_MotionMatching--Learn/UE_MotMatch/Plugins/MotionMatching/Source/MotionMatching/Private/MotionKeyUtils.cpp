@@ -81,6 +81,8 @@ void FMotionKeyUtils::ExtractAnimTrajectory(FTrajectoryData& OutTrajectoryData, 
 	
 	OutTrajectoryData.TrajectoryPoints = TrajectoryPoints;
 	GetAnimVelocityAtTime(InSequence, KeyTime + 1.f, OutTrajectoryData.EndVel);
+
+	// GetWorld()->SpawnActor()
 	
 	//GetAnimVelocityAtTime(InSequence, EndTime, KeyTM, OutTrajectoryData.EndVel);
 	
